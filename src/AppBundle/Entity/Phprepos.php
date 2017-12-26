@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Phprepos
  *
- * @ORM\Table(name="phprepos")
+* @ORM\Table(name="phprepos", options={"collate":"utf8mb4_general_ci", "charset":"utf8mb4"})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PhpreposRepository")
  */
 class Phprepos
