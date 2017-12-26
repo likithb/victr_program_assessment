@@ -10,7 +10,18 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PhpreposController extends Controller
 {
-    
+ 
+  /**
+     * @Route("/", name="phprepos_list")
+     */
+    public function listAction()
+    {
+        $repositories = $this->getDoctrine()
+                ->getRepository('AppBundle:Phprepos')
+                ->findAll();
+        return $this->render('phprepos/index.html.twig', array('repositories' => $repositories));
+    }
+       
      /**
      * @Route("/phprepos/create", name="phprepos_create")
      */
